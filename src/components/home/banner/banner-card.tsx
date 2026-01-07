@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CarouselItem } from "../ui/carousel";
+import { CarouselItem } from "../../ui/carousel";
 
 interface BannerCardProps {
   imageUrl: string;
@@ -9,7 +9,7 @@ interface BannerCardProps {
 
 export default function BannerCard({ imageUrl, title, id }: BannerCardProps) {
   return (
-    <CarouselItem className="basis-[100%] p-0">
+    <CarouselItem className="basis-full p-0">
       <Link
         href={`/activites/${id}`}
         className="flex h-full w-full items-center bg-center bg-no-repeat"

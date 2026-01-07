@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel, CarouselContent } from "../ui/carousel";
+import { Carousel, CarouselContent } from "../../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 export default function Banner({ children }: { children: React.ReactNode[] }) {
