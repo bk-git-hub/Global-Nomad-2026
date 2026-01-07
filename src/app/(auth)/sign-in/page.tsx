@@ -25,7 +25,7 @@ export default function SignInPage() {
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center gap-4 sm:gap-10">
-      <div className="relative h-[192px] w-[270px] sm:h-[154px] sm:w-[340px]">
+      <div className="relative h-48 w-67.5 sm:h-38.5 sm:w-85">
         <Image src="/logo.svg" fill alt="글로벌 노마드" priority />
       </div>
 
