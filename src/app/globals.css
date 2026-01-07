@@ -38,6 +38,8 @@
   --color-blue-primary: #0085ff;
   --color-blue-secondary: #2eb4ff;
   --color-blue-light: #e5f3ff;
+
+  --shadow-nomad-card: 0 4px 16px 0 rgba(17, 34, 17, 0.05);
 }
 
 @theme inline {
