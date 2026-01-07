@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import Image from "next/image";
 import { signUp, type State } from "@/actions/sign-up";
 import AuthInput from "@/components/auth/auth-input";
+import Link from "next/link";
 
 export default function SignUpPage() {
   const initialState: State = { errors: {}, message: null };
@@ -84,6 +85,16 @@ export default function SignUpPage() {
           {isPending ? "처리 중..." : "회원가입"}
         </button>
       </form>
+
+      <p className="text-center text-gray-900">
+        이미 회원이신가요?{" "}
+        <Link
+          href="/sign-up"
+          className="text-nomad-black underline underline-offset-4"
+        >
+          로그인하기
+        </Link>
+      </p>
     </div>
   );
 }
