@@ -5,6 +5,39 @@
 
 @theme {
   --font-pretendard: "Pretendard Variable", sans-serif;
+  --color-black: #1b1b1b;
+  --color-nomad-black: #112211;
+  --color-gray-900: #4b4b4b;
+  --color-gray-800: #79747e;
+  --color-gray-700: #a1a1a1;
+  --color-gray-600: #a4a1aa;
+  --color-gray-500: #adaeb8;
+  --color-gray-400: #cbc9cf;
+  --color-gray-300: #dddddd;
+  --color-gray-200: #eeeeee;
+  --color-gray-100: #fafafa;
+
+  /* Green Scale (Nomad Brand & Point) */
+  --color-green-dark: #0b3b2d;
+  --color-green-light: #ced8d5;
+  --color-green-point: #00ac07;
+
+  /* Red Scale */
+  --color-red-primary: #ff472e;
+  --color-red-secondary: #ffc2ba;
+  --color-red-tertiary: #ffe4e0;
+
+  /* Orange Scale */
+  --color-orange-primary: #ff7c1d;
+  --color-orange-light: #fff4e8;
+
+  /* Yellow Scale */
+  --color-yellow: #ffc23d;
+
+  /* Blue Scale */
+  --color-blue-primary: #0085ff;
+  --color-blue-secondary: #2eb4ff;
+  --color-blue-light: #e5f3ff;
 }
 
 @theme inline {
