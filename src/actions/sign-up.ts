@@ -2,10 +2,9 @@
 
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { signIn } from "/auth"; // 프로젝트의 auth.ts 경로에 맞춰 임포트
+import { signIn } from "/auth";
 import { AuthError } from "next-auth";
 
-// 상단 스키마 정의 생략 (이전과 동일)
 const SignUpSchema = z
   .object({
     email: z.string().email({ message: "유효한 이메일을 입력해주세요." }),
