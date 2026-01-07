@@ -30,29 +30,30 @@ export interface ActivityParams {
   keyword?: string;
   sort?: string;
 }
-
 export async function getActivities({
   size = 10,
   page = 1,
   method = "offset",
   ...rest
-}: ActivityParams = {}) {
+}: ActivityParams = {}): Promise<Activity[]> {
+  // 반환 타입을 Activity[]로 명시
   const searchParams = new URLSearchParams();
   searchParams.append("method", method);
   searchParams.append("size", String(size));
+
   if (method === "offset") {
     searchParams.append("page", String(page));
   }
 
+  // 선택적 파라미터(sort, category, keyword) 필터링 및 추가
   Object.entries(rest).forEach(([key, value]) => {
     if (value !== undefined && value !== null && value !== "") {
       searchParams.append(key, String(value));
     }
   });
-  console.log("searchParams :", searchParams);
 
   const url = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/activities?${searchParams.toString()}`;
-  console.log("url : ", url);
+
   try {
     const res = await fetch(url, {
       method: "GET",
@@ -67,8 +68,12 @@ export async function getActivities({
       throw new Error(errorData.message || `에러 발생: ${res.status}`);
     }
 
-    return await res.json();
+    // JSON 응답에서 activities 배열만 추출하여 반환
+    const data: GetActivitiesResponse = await res.json();
+    return data.activities || [];
   } catch (error) {
-    console.log("getActivities error : ", error);
+    console.error("[API ERROR] getActivities:", error);
+    // 에러 발생 시 런타임 에러 방지를 위해 빈 배열 반환
+    return [];
   }
 }

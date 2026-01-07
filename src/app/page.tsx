@@ -8,17 +8,15 @@ import PopularActivities from "@/components/home/popular-activites/popular-activ
 import PopularActivityCard from "@/components/home/popular-activites/popular-activity-card";
 
 export default async function Home() {
-  const data = await getActivities();
-  const popularData = await getActivities({ sort: "most_reviewed" });
-  const activities: Activity[] = data.activities;
-  const popularActivites: Activity[] = popularData.activities;
-  console.log(data.activities[0]);
+  const bannerActivities = await getActivities();
+  const popularActivities = await getActivities({ sort: "most_reviewed" });
+
   return (
     <div>
       <main className="flex flex-col">
         <Header />
         <Banner>
-          {activities.map((activity) => (
+          {bannerActivities.map((activity) => (
             <BannerCard
               key={activity.id}
               id={String(activity.id)}
@@ -30,7 +28,7 @@ export default async function Home() {
         <div className="w-full px-4">
           <SearchBar />
           <PopularActivities>
-            {popularActivites.map((activity) => (
+            {popularActivities.map((activity) => (
               <PopularActivityCard
                 key={activity.id}
                 ratings={activity.rating}
