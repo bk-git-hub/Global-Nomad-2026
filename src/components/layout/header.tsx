@@ -24,7 +24,6 @@ export default async function Header() {
       </header>
     );
 
-  console.log(user);
   return (
     <header className="flex w-screen justify-between p-5">
       <Link href={"/"}>
