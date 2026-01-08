@@ -13,7 +13,7 @@ export default function ActivityImageCard({
   return (
     <CarouselItem className="basis-full p-0">
       <div className="relative h-full w-full">
-        <Image src={imageUrl} alt={alt} fill />
+        <Image src={imageUrl} alt={alt} fill objectFit="contain" />
       </div>
     </CarouselItem>
   );
