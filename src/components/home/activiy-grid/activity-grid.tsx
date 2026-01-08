@@ -34,6 +34,7 @@ export default async function ActivityGrid({
             ratings={activity.rating}
             imageUrl={activity.bannerImageUrl}
             reviewCount={activity.reviewCount}
+            price={String(activity.price)}
           />
         ))}
       </div>

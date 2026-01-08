@@ -7,6 +7,7 @@ interface ActivityGridCardProps {
   ratings: number;
   reviewCount: number;
   imageUrl: string;
+  price: string;
 }
 
 export default function ActivityGridCard({
@@ -15,6 +16,7 @@ export default function ActivityGridCard({
   ratings,
   reviewCount,
   imageUrl,
+  price,
 }: ActivityGridCardProps) {
   return (
     <Link href={`/activities/${id}`} className="group flex flex-col gap-3">
@@ -28,13 +30,18 @@ export default function ActivityGridCard({
       </div>
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-1 text-xs font-medium">
-          <span className="text-nomad-black">★</span>
+          <span className="text-yellow">★</span>
           <span>{ratings}</span>
           <span className="text-gray-400">({reviewCount})</span>
         </div>
-        <h3 className="line-clamp-2 text-[18px] leading-snug font-semibold text-gray-900">
+        <h3 className="line-clamp-1 text-[18px] leading-snug font-semibold text-gray-900">
           {title}
         </h3>
+
+        <span className="text-[20px] font-bold">
+          ₩ {price}{" "}
+          <span className="text-[16px] font-normal text-gray-700">/ 인</span>
+        </span>
       </div>
     </Link>
   );
