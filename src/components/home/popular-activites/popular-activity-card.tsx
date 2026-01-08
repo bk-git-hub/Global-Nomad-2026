@@ -2,7 +2,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import Link from "next/link";
 
 interface PopularActivityCardProps {
-  id: string;
+  id: number;
   title: string;
   ratings: number;
   reviewCount: number;
