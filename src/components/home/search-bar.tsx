@@ -8,27 +8,27 @@ export default function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [keyword, setKeyword] = useState(searchParams.get("keyword") ?? "");
-
-  const handleSearch = (e: FormEvent) => {
-    e.preventDefault();
-
-    const trimmedKeyword = keyword.trim();
-    if (!trimmedKeyword) {
-      router.push("/search");
-      return;
-    }
-
-    const params = new URLSearchParams();
-    params.set("keyword", trimmedKeyword);
-
-    router.push(`/search?${params.toString()}`);
-  };
+  // URL에 있는 keyword를 직접 소스로 사용합니다.
+  const urlKeyword = searchParams.get("keyword") ?? "";
 
   return (
     <form
-      onSubmit={handleSearch}
-      className="shadow-nomad-card relative z-10 mx-auto -mt-15 flex h-32.5 w-86 flex-col gap-4 rounded-3xl bg-white px-6 py-4"
+      key={urlKeyword}
+      onSubmit={(e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const nextKeyword = formData.get("keyword")?.toString().trim();
+
+        const params = new URLSearchParams();
+        if (nextKeyword) {
+          params.set("keyword", nextKeyword);
+          params.set("page", "1");
+          router.push(`/?${params.toString()}`);
+        } else {
+          router.push("/");
+        }
+      }}
+      className="shadow-nomad-card relative z-10 mx-auto -mt-15 flex h-32.5 w-full max-w-7xl flex-col gap-4 rounded-3xl bg-white px-6 py-4"
     >
       <p className="font-bold text-gray-900">무엇을 체험하고 싶으신가요?</p>
 
@@ -36,11 +36,9 @@ export default function SearchBar() {
         <div className="flex flex-1 items-center rounded-sm border border-gray-800 py-1 pr-4 pl-2 transition-colors focus-within:border-gray-600">
           <Image src={"/bed.svg"} width={24} height={24} alt="검색" />
           <input
+            name="keyword" // FormData 사용을 위해 name 추가
             type="text"
-            value={keyword}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setKeyword(e.target.value)
-            }
+            defaultValue={urlKeyword} // useState 대신 defaultValue를 사용하여 제어/비제어 하이브리드 가능
             className="ml-2 h-10 w-full text-sm focus:outline-none"
             placeholder="내가 원하는 체험은"
           />
