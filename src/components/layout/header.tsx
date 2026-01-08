@@ -25,7 +25,7 @@ export default async function Header() {
     );
 
   return (
-    <header className="flex w-screen justify-between p-5">
+    <header className="mx-auto flex w-screen max-w-7xl justify-between p-5">
       <Link href={"/"}>
         <Image
           src={"/logo_small.svg"}
@@ -37,17 +37,17 @@ export default async function Header() {
       <div className="px-1s flex items-center gap-1">
         <Avatar nickname={user.nickname} src={user.image} />
         <span className="font-medium">{user.nickname}</span>
+        <form
+          action={async () => {
+            "use server";
+            await signOut({ redirectTo: "/" });
+          }}
+        >
+          <button className="text-sm font-medium text-gray-600 hover:cursor-pointer hover:text-gray-900">
+            로그아웃
+          </button>
+        </form>
       </div>
-      {/* <form
-        action={async () => {
-          "use server";
-          await signOut({ redirectTo: "/" });
-        }}
-      >
-        <button className="text-sm font-medium text-gray-600 hover:text-gray-900">
-          로그아웃
-        </button>
-      </form> */}
     </header>
   );
 }

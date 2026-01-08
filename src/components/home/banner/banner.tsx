@@ -15,8 +15,11 @@ export default function Banner({ children }: { children: React.ReactNode[] }) {
           stopOnInteraction: false,
         }),
       ]}
+      className="w-full max-w-7xl"
     >
-      <CarouselContent className="m-0 h-60 w-full">{children}</CarouselContent>
+      <CarouselContent className="m-0 h-60 w-full md:h-100">
+        {children}
+      </CarouselContent>
     </Carousel>
   );
 }

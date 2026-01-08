@@ -15,7 +15,7 @@ export default function HomePage({
   }>;
 }) {
   return (
-    <main className="flex flex-col pb-20">
+    <main className="flex w-full flex-col items-center pb-20">
       <Suspense
         fallback={<div className="h-16 w-screen animate-pulse bg-gray-50" />}
       >

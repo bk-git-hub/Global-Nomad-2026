@@ -27,7 +27,7 @@ export default function SearchBar() {
           router.push("/");
         }
       }}
-      className="shadow-nomad-card relative z-10 mx-auto -mt-15 flex h-32.5 w-full max-w-7xl flex-col gap-4 rounded-3xl bg-white px-6 py-4"
+      className="shadow-nomad-card relative z-10 mx-auto -mt-15 flex h-32.5 w-full max-w-5xl flex-col gap-4 rounded-3xl bg-white px-6 py-4"
     >
       <p className="font-bold text-gray-900">무엇을 체험하고 싶으신가요?</p>
 

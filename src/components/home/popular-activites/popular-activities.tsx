@@ -13,7 +13,7 @@ export default function PopularActivities({
   children: React.ReactNode[];
 }) {
   return (
-    <section className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-6">
+    <section className="mx-auto mt-15 flex max-w-7xl flex-col gap-4 sm:gap-6">
       <Carousel
         opts={{
           align: "start",
