@@ -5,6 +5,7 @@ import ActivityHeading from "@/components/activity/activity-heading";
 import ActivityImageCarousel from "@/components/activity/activity-image-carousel/activity-image-carousel";
 import ActivityImageCard from "@/components/activity/activity-image-carousel/activity-image-card";
 import ActivityDescription from "@/components/activity/activity-description";
+import ActivityReviewSummary from "@/components/activity/activity-review/activity-review-summary";
 
 interface ActivityPageProps {
   params: Promise<{ id: string }>;
@@ -25,7 +26,7 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex-flex-col mx-auto w-full max-w-[1080px] items-center">
         <ActivityHeading activityInfo={activityInfo} />
         <ActivityImageCarousel>
           {images.map((imageUrl, index) => (
@@ -39,6 +40,10 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
         <div className="flex flex-col gap-4 px-6 py-4">
           <ActivityDescription description={activityInfo.description} />
+          <ActivityReviewSummary
+            rating={activityInfo.rating}
+            reviewCount={activityInfo.reviewCount}
+          />
         </div>
       </main>
     </>
