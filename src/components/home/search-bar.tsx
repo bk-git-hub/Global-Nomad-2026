@@ -1,14 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { FormEvent } from "react";
 import Image from "next/image";
 
 export default function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // URL에 있는 keyword를 직접 소스로 사용합니다.
   const urlKeyword = searchParams.get("keyword") ?? "";
 
   return (
@@ -36,9 +35,9 @@ export default function SearchBar() {
         <div className="flex flex-1 items-center rounded-sm border border-gray-800 py-1 pr-4 pl-2 transition-colors focus-within:border-gray-600">
           <Image src={"/bed.svg"} width={24} height={24} alt="검색" />
           <input
-            name="keyword" // FormData 사용을 위해 name 추가
+            name="keyword"
             type="text"
-            defaultValue={urlKeyword} // useState 대신 defaultValue를 사용하여 제어/비제어 하이브리드 가능
+            defaultValue={urlKeyword}
             className="ml-2 h-10 w-full text-sm focus:outline-none"
             placeholder="내가 원하는 체험은"
           />
