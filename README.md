@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Global Nomad 2026
 
-## Getting Started
+사람들이 여행을 갈 때, 가서 뭘 할지, 비용은 얼마인지 등 여러 고민을 하게 된다. 바쁜 현대인의 이런 고민을 줄여주기 위해 플랫폼 안에 잘 짜인 체험 상품을 보고 간단하게 예약할 수 있는 서비스입니다.
 
-First, run the development server:
+## 기술 스택
 
+- **Framework**: Next.js 16.1.1
+- **Library**: React 19.2.3
+- **Authentication**: Auth.js (NextAuth v5)
+- **Styling**: Tailwind CSS v4
+- **Validation**: Zod
+- **Components**: Shadcn UI(Radix UI), Lucide React
+
+## 주요 기능
+
+- **메인 페이지**: 키워드 검색, 배너 슬라이더, 카테고리별 활동 필터링 및 인기 활동 목록 제공
+- **상세 페이지**: 활동 상세 정보 조회, 이미지 캐러셀, 사용자 리뷰 목록 및 평점 요약/page.tsx]
+- **사용자 인증**: Next-auth 기반 Credentials 로그인 및 회원가입
+- **데이터 검증**: Zod를 활용한 클라이언트 및 서버 측 입력값 검증
+
+## 시작하기
+
+### 패키지 설치
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+### 개발 서버 실행
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 빌드 및 시작
+```bash
+pnpm build
+pnpm start
+```
