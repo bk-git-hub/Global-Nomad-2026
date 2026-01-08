@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ActivityHeading from "@/components/activity/activity-heading";
 import ActivityImageCarousel from "@/components/activity/activity-image-carousel/activity-image-carousel";
 import ActivityImageCard from "@/components/activity/activity-image-carousel/activity-image-card";
+import ActivityDescription from "@/components/activity/activity-description";
 
 interface ActivityPageProps {
   params: Promise<{ id: string }>;
@@ -35,6 +36,10 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
             />
           ))}
         </ActivityImageCarousel>
+
+        <div className="flex flex-col gap-4 px-6 py-4">
+          <ActivityDescription description={activityInfo.description} />
+        </div>
       </main>
     </>
   );
