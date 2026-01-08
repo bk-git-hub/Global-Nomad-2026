@@ -6,7 +6,14 @@ import ActivityImageCard from "@/components/activity/activity-image-carousel/act
 import ActivityDescription from "./activity-description";
 import ActivityReviewSummary from "./activity-review/activity-review-summary";
 
-export default async function ActivityDetailContent({ id }: { id: string }) {
+export default async function ActivityDetailContent({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  "use cache";
+  const param = await params;
+  const id = param.id;
   const activityInfo = await getActivityDetail({ id: id });
 
   if (!activityInfo) return notFound();
