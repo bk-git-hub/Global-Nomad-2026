@@ -11,7 +11,7 @@ export default function BannerCard({ imageUrl, title, id }: BannerCardProps) {
   return (
     <CarouselItem className="basis-full p-0">
       <Link
-        href={`/activites/${id}`}
+        href={`/activities/${id}`}
         className="flex h-full w-full items-center bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imageUrl})`,
