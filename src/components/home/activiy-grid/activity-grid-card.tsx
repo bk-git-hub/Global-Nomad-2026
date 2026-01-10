@@ -25,6 +25,7 @@ export default function ActivityGridCard({
           src={imageUrl}
           alt={title}
           fill
+          sizes="(min-width: 1280px) 204px, (min-width: 1024px) 25vw, (min-width: 768px) 50vw, 80vw"
           className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>

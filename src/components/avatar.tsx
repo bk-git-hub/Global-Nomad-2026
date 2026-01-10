@@ -15,7 +15,13 @@ export default function Avatar({ src, nickname, size = "sm" }: AvatarProps) {
       className={`${sizeClasses} bg-nomad-black relative flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-300 font-semibold text-white`}
     >
       {src ? (
-        <Image src={src} fill alt={nickname} className="object-cover" />
+        <Image
+          src={src}
+          width={30}
+          height={30}
+          alt={nickname}
+          className="object-cover"
+        />
       ) : (
         <span className="tracking-tighter uppercase">{fallbackText}</span>
       )}
